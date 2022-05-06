@@ -22,12 +22,15 @@ public class Main {
         Scanner s = new Scanner(System.in);
         int n = Integer.parseInt(s.nextLine());
 
-        // In short, the instructions translate to tell whether a number has two even factors.
-        // However, if a number has two even factors, then its prime factorization MUST have at least two 2s.
-        // AND if a numbers prime factorization has two 2s, it MUST be divisible by 4.
-        // Therefore, all that we have to do is check whether a number is divisible by 4, and print YES/NO accordingly.
+        // In short, the instructions translate to tell whether a number can be split into two even amounts.
+        // As long as a number is even, this is guaranteed to be the case.
 
-        System.out.println(n % 4 == 0? "YES" : "NO");
+        // This is because any even number "n" can be split into the numbers 2 and n - 2, which are both even.
+        // This is not the case for two however, as it is only built of two 1s.
+
+        // Therefore, the number must not be 2, and must be divisible by 2.
+
+        System.out.println((n % 2 == 0 && n != 2)? "YES" : "NO");
 
     }
 
